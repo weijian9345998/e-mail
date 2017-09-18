@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>邮箱demo</title>
+<link rel="stylesheet" href="css/reset-0823.css" type="text/css">
+<link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+
+<body>
+<div class="div0">
+   <header>my mail demo</header>
+   <nav>
+     <ol>
+        <a href="new.html"><button>新建邮件</button></a>
+        <a><button onClick="copy()">复制邮件</button></a>
+        <a><button onClick="cl()">删除邮件</button></a>
+        <a><button onClick="seltAll()">全选邮件</button></a>
+        <a><button onClick="seltNone()">全不选</button></a>
+        <a><button onClick="selReverse()">反选</button></a>
+     </ol>
+   </nav>
+   <section>
+     <ul id="ul1">
+        <li><i>勾选</i><i>发件人</i><i>时间</i><i>标题</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>GitHub</i><i>0830/10:20</i><i>[GitHub] Thanks for verifying your email address</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>Baidu</i><i>0826/16:55</i><i>您的帐已成功修改密保问题,如非本人操作，请尽快修改密码并修改密保问题</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>微信团队</i><i>0822/22:11</i><i>感谢你注册微信公众平台。</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>GitHub</i><i>0830/10:20</i><i>[GitHub] Thanks for verifying your email address</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>Baidu</i><i>0826/16:55</i><i>您的帐已成功修改密保问题,如非本人操作，请尽快修改密码并修改密保问题</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>微信团队</i><i>0822/22:11</i><i>感谢你注册微信公众平台。</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>GitHub</i><i>0830/10:20</i><i>[GitHub] Thanks for verifying your email address</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>Baidu</i><i>0826/16:55</i><i>您的帐已成功修改密保问题,如非本人操作，请尽快修改密码并修改密保问题</i></li>
+        <li><i><input type="checkbox" name="chckBox"></i><i>微信团队</i><i>0822/22:11</i><i>感谢你注册微信公众平台。</i></li>
+     </ul>
+   </section>
+</div>
+</body>
+<script>
+	  var ckb=document.getElementsByName("chckBox")
+	  function seltAll(){
+		   for(var i=0; i<ckb.length; i++){ckb[i].checked=true}
+		  }
+	  
+	function seltNone(){
+		   for(var i=0; i<ckb.length; i++){ckb[i].checked=false}
+		  }
+	
+	function selReverse(){
+		   for(var i=0; i<ckb.length; i++){
+			  if (ckb[i].checked==true) { ckb[i].checked=false;}
+			  else{ckb[i].checked=true;}
+		  }
+	}
+	
+    function copy(){
+	var oUl1=document.getElementById('ul1')
+	var oLi1=document.getElementsByTagName('li')
+	var addLi=document.createElement('li')
+	addLi.innerHTML='<i><input type="checkbox" name="chckBox"></i><i>GitHub</i><i>0830/10:20</i><i>[GitHub] Thanks for verifying your email address</i>';
+    oUl1.appendChild(addLi);
+		  }
+	 
+	function cl(){
+		   for (var i=ckb.length-1; i>=0; i--) {
+                if (ckb[i].checked==true) {ckb[i].parentElement.parentElement.style.display="none"}
+		   }
+		  }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新建文件</title>
+<link rel="stylesheet" href="css/reset-0823.css" type="text/css">
+<link rel="stylesheet" href="css/new.css" type="text/css">
+<style>
+
+</style>
+</head>
+
+<body>
+<div class="div0">
+   <header>my mail demo</header>
+   <nav>
+     <ul>
+        <a><button>发送邮件</button></a>
+        <a><button>存草稿箱</button></a>
+        <a><button onClick="cl()">取消</button></a>
+        <a href="index.html"><button>返回收件箱</button></a>
+     </ul>
+   </nav>
+   <section>
+      <ul>
+        <li><i>收件人邮箱地址：</i><input type="email"></li>
+        <li><i>邮件标题：</i><input type="text"></li>
+        <li><i>邮件正文：</i><textarea></textarea></li>
+      </ul>
+   </section>
+</div>
+<script>
+  function cl(){
+	  document.getElementsByTagName("input").item(0).value=null;
+	  document.getElementsByTagName("input").item(1).value=null;
+	  document.getElementsByTagName('textarea').item(0).value=null;
+	  }
+</script>
+</body>
+</html>
